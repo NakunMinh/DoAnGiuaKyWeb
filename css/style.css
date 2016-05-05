@@ -1,85 +1,22 @@
 #content-wrap{
 	background-color: gray;
 	width: 100%;
-	height: 1000px;
+	height: 2650px;
 }
 #content-wrap1{
-	background-image: url("../image/background.jpg");
+	background-image: url("../images/background.jpg");
 	background-repeat: no-repeat;
 	width: 100%;
-	height: 1000px;
+	height: 2000px;
 	padding-top: 150px;
 }
 #content{
 	margin: auto;
 	width: 80%;
-	height: 10000px;
+	height: 2100px;
 }
 #thongtin{
 	width: 100%;
 	height: 345px;
 	background-color: white;
-}
-#avatar{
-	width: 345px;
-	height: 345px;
-	background-image: url("../image/avatar.jpg");
-	background-repeat: no-repeat;
-	float: left;
-}
-#detail{
-	width: 400px;
-	height: 245px;
-	margin-left: 50px;
-	margin-top: 50px;
-	float: left;
-}
-#follow{
-	width: 200px;
-	height: 245px;
-	float: left;
-	margin-top: 50px;
-}
-#contact{
-	width: 100%;
-	height: 40px;
-	background-color: white;
-	padding-top: 10px;
-	padding-left: 10px;
-	border-top: solid 1px;
-}
-#background-content{
-	width: 70%;
-	height: 100%;
-	background-color: white;
-	margin-top: 10px;
-}
-#title{
-	background-color: black;
-	width: 100px;
-	height: 30px;
-	color: white;
-}
-#nd{
-	width: 90%;
-	height: 100%;
-	margin: auto;
-}
-.icon{
-	width: 50px;
-	height: 50px;
-	float: left;
-}
-#follow-top{
-	position: relative;
-	left: 70px;
-}
-#follow-bottom{
-	position: relative;
-	top: 200px;
-	left: 70px;
-}
-#contact-address{
-	float: left;
-	width: 90%;
 }
