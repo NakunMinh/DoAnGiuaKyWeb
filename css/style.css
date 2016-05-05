@@ -1,22 +1,54 @@
-#content-wrap{
+.content-wrap{
 	background-color: gray;
 	width: 100%;
 	height: 2650px;
 }
-#content-wrap1{
+.content-wrap1{
 	background-image: url("../images/background.jpg");
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 2000px;
-	padding-top: 150px;
+	padding-top: 250px;
 }
-#content{
+.content{
 	margin: auto;
-	width: 80%;
+	width: 70%;
 	height: 2100px;
-}
-#thongtin{
-	width: 100%;
-	height: 345px;
 	background-color: white;
+}
+.thongtin{
+	height: 300px;
+	background-color: white;
+}
+.noidung{
+	height: 1000px;
+	border: 1px solid;
+}
+.avatar{
+	height: 230px;
+}
+.contact{
+	height: 50px;
+	background-color: red;
+}
+.inform{
+	height: 230px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+.A{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.B{
+	margin-left: 100px;
+}
+.line{
+	line-height: 0.5;
+}
+.background{
+	background-color: black;
+	color: white;
+	height: 30px;
+	text-align: center;
 }
