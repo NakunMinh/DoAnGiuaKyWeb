@@ -8,18 +8,42 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
 </head>
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
   <div class="content-wrap"> 
     <div class="content-wrap1">
       <div class="container content">
         <div class="row">
           <!--thong tin -->
-          <img class="col-md-3 avatar" src="images/avatar.jpg" alt="avatar">
+          <img class="col-md-3 avatar" src="images/avatar.png" alt="avatar">
 
-          <div class="col-md-9 detail inform">
-            <h3 class="col-md-11 line"><strong>Trần Minh Nhí</strong></h3>
-            <div class="col-md-1"><button>Edit</button></div>
+          <div class="col-md-9 detail inform" ng-app="" ng-init="hoten='Trần Minh Nhí'">
+            <h3 class="col-md-10 line"><strong>{{hoten}}</strong></h3>
+
+            <div class="col-md-2">
+              <button type="button" class="btn" data-toggle="modal" data-target="#myModal">Edit</button>
+
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">Chang data in Summary</h4>
+                    </div>
+                    <div class="modal-body">
+                      <textarea name="textbody" id="ndsummary" ng-model="ndHoten" cols="75" rows="5" placeholder="Change data............"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" ng-click="myFunction()">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <h4 class="col-md-12 line">Studing University Of Science - HCMUS</h4>
             <h5 class="col-md-12 line">227 Nguyễn Văn Cừ, Q5, TP HCM</h5>
             <h6 class="col-md-12 line">Current</h6>
@@ -65,142 +89,111 @@
             <div class="col-md-10"></div>
             
             <!--summary-->
-            <div class="col-md-12">
+            <div class="col-md-12" ng-app="" ng-init="noidungsummary='ABC'">
               <h3 class="glyphicon glyphicon-duplicate col-md-10">Summary</h3>
-              <button type="button" class="col-md-2 btn" data-toggle="modal" data-target="#myModal">Edit</button>
+              <button type="button" class="col-md-2 btn" data-toggle="modal" data-target="#myModal1">Edit</button>
 
-              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="myModalLabel">Chang data</h4>
+                      <h4 class="modal-title" id="myModalLabel">Chang data in Summary</h4>
                     </div>
                     <div class="modal-body">
-                      <textarea name="textbody" id="" cols="75" rows="5" placeholder="Change data............"></textarea>
+                      <textarea name="textbody" id="ndsummary" ng-model="ndsummary" cols="75" rows="5" placeholder="Change data............"></textarea>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-primary" ng-click="myFunction1()">Save changes</button>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-12">
-                Internet executive with over 20 years of experience, including general management of mid to large size organizations, corporate development, product development, business operations, and strategy. 
 
-                Currently CEO at LinkedIn, the web's largest and most powerful network of professionals. 
-
-                Prior to LinkedIn, was an Executive in Residence at Accel Partners and Greylock Partners. Primarily focused on advising the leadership teams of the firm's existing consumer technology portfolio companies while also working closely with the firm’s partners to evaluate new investment opportunities.
-
-                Previously served in key leadership roles at Yahoo! for over seven years, most recently as the Executive Vice President of Yahoo!'s Network Division managing Yahoo's consumer web product portfolio, including Yahoo's Front Page, Mail, Search, and Media products.
-
-                Specialties: general management, corporate development, product development, business operations, strategy, product marketing, non-profit governance
+              <div class="col-md-12" id="summary">
+                {{noidungsummary}}
               </div>
             </div>
 
             <!--Experience-->
-            <div class="col-md-12">
+            <div class="col-md-12" ng-app="" ng-init="noidungexperience='ABC'">
               <h3 class="glyphicon glyphicon-send col-md-10">Experience</h3>
-              <button type="button" class="col-md-2 btn" data-toggle="modal" data-target="#myModal">Edit</button>
+              <button type="button" class="col-md-2 btn" data-toggle="modal" data-target="#myModal2">Edit</button>
 
-              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="myModalLabel">Chang data</h4>
+                      <h4 class="modal-title" id="myModalLabel">Chang data in Experience</h4>
                     </div>
                     <div class="modal-body">
-                      <textarea name="textbody" id="" cols="75" rows="5" placeholder="Change data............"></textarea>
+                      <textarea name="textbody" id="" ng-model="ndexperience" cols="75" rows="5" placeholder="Change data............"></textarea>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-primary" ng-click="myFunction2()">Save changes</button>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-12">
-                Internet executive with over 20 years of experience, including general management of mid to large size organizations, corporate development, product development, business operations, and strategy. 
-
-                Currently CEO at LinkedIn, the web's largest and most powerful network of professionals. 
-
-                Prior to LinkedIn, was an Executive in Residence at Accel Partners and Greylock Partners. Primarily focused on advising the leadership teams of the firm's existing consumer technology portfolio companies while also working closely with the firm’s partners to evaluate new investment opportunities.
-
-                Previously served in key leadership roles at Yahoo! for over seven years, most recently as the Executive Vice President of Yahoo!'s Network Division managing Yahoo's consumer web product portfolio, including Yahoo's Front Page, Mail, Search, and Media products.
-
-                Specialties: general management, corporate development, product development, business operations, strategy, product marketing, non-profit governance
+                {{noidungexperience}}
               </div>
             </div>
 
             <!--Skills-->
-            <div class="col-md-12">
+            <div class="col-md-12" ng-app="" ng-init="noidungskills='ABC'">
               <h3 class="glyphicon glyphicon-star-empty col-md-10">Skills</h3>
-              <button type="button" class="col-md-2 btn" data-toggle="modal" data-target="#myModal">Edit</button>
+              <button type="button" class="col-md-2 btn" data-toggle="modal" data-target="#myModal3">Edit</button>
 
-              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="myModalLabel">Chang data</h4>
+                      <h4 class="modal-title" id="myModalLabel">Chang data in Skills</h4>
                     </div>
                     <div class="modal-body">
-                      <textarea name="textbody" id="" cols="75" rows="5" placeholder="Change data............"></textarea>
+                      <textarea name="textbody" id="" ng-model="ndskills" cols="75" rows="5" placeholder="Change data............"></textarea>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-primary" ng-click="myFunction3()">Save changes</button>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-12">
-                Internet executive with over 20 years of experience, including general management of mid to large size organizations, corporate development, product development, business operations, and strategy. 
-
-                Currently CEO at LinkedIn, the web's largest and most powerful network of professionals. 
-
-                Prior to LinkedIn, was an Executive in Residence at Accel Partners and Greylock Partners. Primarily focused on advising the leadership teams of the firm's existing consumer technology portfolio companies while also working closely with the firm’s partners to evaluate new investment opportunities.
-
-                Previously served in key leadership roles at Yahoo! for over seven years, most recently as the Executive Vice President of Yahoo!'s Network Division managing Yahoo's consumer web product portfolio, including Yahoo's Front Page, Mail, Search, and Media products.
-
-                Specialties: general management, corporate development, product development, business operations, strategy, product marketing, non-profit governance
+                {{noidungskills}}
               </div>
             </div>
 
             <!--Education-->
-            <div class="col-md-12">
+            <div class="col-md-12" ng-app="" ng-init="noidungeducation='ABC'">
               <h3 class="glyphicon glyphicon-flag col-md-10">Education</h3>
-              <button type="button" class="col-md-2 btn" data-toggle="modal" data-target="#myModal">Edit</button>
+              <button type="button" class="col-md-2 btn" data-toggle="modal" data-target="#myModal4">Edit</button>
 
-              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="myModalLabel">Chang data</h4>
+                      <h4 class="modal-title" id="myModalLabel">Chang data in Education</h4>
                     </div>
                     <div class="modal-body">
-                      <textarea name="textbody" id="" cols="75" rows="5" placeholder="Change data............"></textarea>
+                      <textarea name="textbody" id="" ng-model="ndeducation" cols="75" rows="5" placeholder="Change data............"></textarea>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-primary" ng-click="myFunction4()">Save changes</button>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-12">
-                Internet executive with over 20 years of experience, including general management of mid to large size organizations, corporate development, product development, business operations, and strategy. 
-
-                Currently CEO at LinkedIn, the web's largest and most powerful network of professionals. 
-
-                Prior to LinkedIn, was an Executive in Residence at Accel Partners and Greylock Partners. Primarily focused on advising the leadership teams of the firm's existing consumer technology portfolio companies while also working closely with the firm’s partners to evaluate new investment opportunities.
-
-                Previously served in key leadership roles at Yahoo! for over seven years, most recently as the Executive Vice President of Yahoo!'s Network Division managing Yahoo's consumer web product portfolio, including Yahoo's Front Page, Mail, Search, and Media products.
-
-                Specialties: general management, corporate development, product development, business operations, strategy, product marketing, non-profit governance
+                {{noidungeducation}}
               </div>
             </div>
 
@@ -210,9 +203,34 @@
       </div>
     </div>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+      $scope.myFunction1 = function(){
+        var temp = $scope.ndsummary;
+        $scope.noidungsummary = temp;
+      }
+      $scope.myFunction2 = function(){
+       var temp = $scope.ndexperience;
+       $scope.noidungexperience = temp;
+     }
+     $scope.myFunction3 = function(){
+      var temp = $scope.ndskills;
+      $scope.noidungskills = temp;
+    }
+    $scope.myFunction4 = function(){
+      var temp = $scope.ndeducation;
+      $scope.noidungeducation = temp;
+    }
+    $scope.myFunction = function(){
+      var temp = $scope.ndHoten;
+      $scope.hoten = temp;
+    }
+  });
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
 </body>
 </html>
