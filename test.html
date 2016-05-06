@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Bé tập tính</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app>
+	
+	<div ng-controller="HelloCtrl">
+ Ban ten la: <input type="text" ng-model="name"/>
+ <p>Xin chao ban <b>{{ name }}</b> ^_^</p>
+ </div>
+
+	<div name="myForm" ng-app="myApp" ng-controller="myCtrl">
+		<h1 id="nhi" ng-model="nhi">ABC</h1>
+		<button id="a" ng-click="myFunction()">CLick</button>
+	</div>
+	<!--
+	<form name="myForm" ng-app="myApp" ng-controller="myCtrl">
+		<h3>Bé tập tính</h3><br>
+		<table>
+			<tr>
+				<td>Số thứ nhất</td>
+				<td><input type="text" name="firstNumber" ng-model="firstNumber"></td>
+				<td rowspan="3">
+					<input type="radio" name="Calculate" value="add" id="cong"> Cộng
+					<input type="radio" name="Calculate" value="sub" id="tru"> Trừ<br>
+					<input type="radio" name="Calculate" value="mul" id="nhan"> Nhân
+					<input type="radio" name="Calculate" value="div" id="chia"> Chia<br>
+					<input type="button" value="Tính" ng-click="myFunction()">
+				</td>
+			</tr>
+			<tr>
+				<td>Số thứ hai</td>
+				<td><input type="text" name="secondNumber" ng-model="secondNumber"></td>
+			</tr>
+			<tr>
+				<td>Kết quả</td>
+				<td><input type="text" name="result" ng-model="result"></td>
+			</tr>
+			<tr>
+				<td>Thông báo</td>
+				<td colspan="2"><span>{{thongbao}}</span></td>
+			</tr>
+		</table>
+
+	</form> -->
+
+
+	<script>
+		var app = angular.module('myApp', []);
+
+		function HelloCtrl($scope) {
+$scope.name = "bi an";
+}
+		app.controller('myCtrl', function($scope) {
+			$scope.myFunction = function(){
+
+				if($scope.nhi == "ABC"){
+
+				}
+
+				if (document.getElementById("cong").checked == false && document.getElementById("tru").checked == false && document.getElementById("nhan").checked == false && document.getElementById("chia").checked == false){
+					$scope.thongbao = "Bạn chưa chọn phép tính";
+					return;
+				}
+				if ($scope.firstNumber === ""){
+					$scope.thongbao = "Chưa nhập ở ô Số thứ nhất";
+					return;
+				}
+				if ($scope.secondNumber === ""){
+					$scope.thongbao = "Chưa nhập ở ô Số thứ hai";
+					return;
+				}
+				var ktx = isNaN($scope.firstNumber);
+				var kty = isNaN($scope.firstNumber);
+				//test x, y is number or not
+				if (ktx == true) {
+					$scope.thongbao = "Giá trị nhập ở ô Số thứ nhất không phải là số";
+					return;
+				}
+				if (kty == true) {
+					$scope.thongbao = "Giá trị nhập ở ô Số thứ hai không phải là số";
+					return;
+				}
+				if (document.getElementById("cong").checked){
+					$scope.result = Number($scope.firstNumber) + Number($scope.secondNumber);
+				}
+				if (document.getElementById("tru").checked){
+					$scope.result = Number($scope.firstNumber) - Number($scope.secondNumber);
+				}
+				if (document.getElementById("nhan").checked){
+					$scope.result = Number($scope.firstNumber) * Number($scope.secondNumber);
+				}
+				if (document.getElementById("chia").checked){
+					var mau = Number($scope.secondNumber);
+					if (mau === 0){
+						$scope.thongbao = "Không thể chia cho 0";
+						return;
+					}
+					$scope.result = Number($scope.firstNumber) / Number($scope.secondNumber);
+				}
+			}
+		});
+	</script> 
+
+</body>
+</html>
